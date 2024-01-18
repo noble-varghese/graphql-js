@@ -1,11 +1,9 @@
 name: Dev NPM
-on:
-  pull_request:
-    types: [opened, synchronize, labeled, unlabeled]
+on: pull_request
 jobs:
   ci:
     uses: ./.github/workflows/ci.yml
-  deploy-to-npm-branch:
+  deploy-to-dev-npm-branch:
     name: Deploy to `npm` branch
     needs: ci
     if: contains(github.event.pull_request.labels.*.name, 'dev-npm')
