@@ -76,6 +76,8 @@ import {
   getVariableValues,
 } from './values.js';
 
+import {trace} from 'dd-trace'
+
 /* eslint-disable max-params */
 // This file contains a lot of such errors but we plan to refactor it anyway
 // so just disable it for entire file.
@@ -1062,6 +1064,7 @@ function completeListValue(
   incrementalDataRecord: IncrementalDataRecord,
   deferMap: ReadonlyMap<DeferUsage, DeferredFragmentRecord>,
 ): PromiseOrValue<ReadonlyArray<unknown>> {
+  trace('HelloWorld', ()=> {})
   const itemType = returnType.ofType;
 
   if (isAsyncIterable(result)) {

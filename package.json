@@ -93,5 +93,8 @@
   },
   "publishConfig": {
     "tag": "alpha"
+  },
+  "dependencies": {
+    "dd-trace": "^5.57.1"
   }
 }
